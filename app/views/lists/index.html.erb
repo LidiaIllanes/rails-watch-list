@@ -2,8 +2,12 @@
     <h1>Those are your movie lists</h1>
 
     <ul>
-    <% @lists.each do |list| %>
-        <li><%=link_to list.name , list_path(list) %></li>
-    <% end %>
+      <% @lists.each do |list| %>
+        <li>
+            <%=link_to list_path(list) do %>
+                <%=  list.name  %>
+            <% end %>
+        </li>
+      <% end %>
     </ul>
 </div>
